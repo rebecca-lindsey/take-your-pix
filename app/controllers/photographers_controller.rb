@@ -1,3 +1,5 @@
 class PhotographersController < ApplicationController
-  def show; end
+  def show
+    @photographer = current_photographer
+  end
 end
