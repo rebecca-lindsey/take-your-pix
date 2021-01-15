@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+ Background: #efe7e7
+ Link:  #211268
+ Link-hover: #361FAD
+ Text: #252D26
+ */
+
+body {
+  background-color: #efe7e7;
+  color: #252d26;
+}
+
+a {
+  color: #211268;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #361fad;
+}
+
+.field_with_errors {
+  color: red;
+  font-weight: bold;
+  display: inline-block;
+}
