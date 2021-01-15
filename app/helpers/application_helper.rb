@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def current_client
-    current_photographer ||= Photographer.find_by(id: sesssion[:photographer_id])
+    current_photographer ||= Photographer.find_by(id: session[:photographer_id])
   end
 
   def require_login
