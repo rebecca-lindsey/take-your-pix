@@ -5,4 +5,5 @@ class Photographer < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :username, :password, :password_confirmation, :location, :specialty, presence: true
+
 end

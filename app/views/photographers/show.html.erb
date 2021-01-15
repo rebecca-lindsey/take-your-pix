@@ -1,3 +1,7 @@
 <h1><%=@photographer.username%>'s Homepage</h1>
+<h2>Location: <%=@photographer.location%></h2>
+<h2>Specialty: <%=@photographer.specialty%></h2>
 
-<%= link_to "Logout", logout_path, method: :delete %>
+<ul>
+<%= render partial: "album", collection: @albums %>
+</ul>

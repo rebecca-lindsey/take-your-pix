@@ -1,2 +1,3 @@
 module PhotographersHelper
+
 end
