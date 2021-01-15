@@ -2,10 +2,10 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    if @photographer = Photographer.find_by(email: params[:email])
+    if @photographer = Photographer.find_by(email: params[:user][:email])
       session[:user_id] = @photographer.id
       redirect_to photographer_path(@photographer)
-    elsif @client = Client.find_by(email: params[:email])
+    elsif @client = Client.find_by(email: params[:user][:email])
       session[:user_id] = @client.id
       redirect_to client_path(@client)
     else
