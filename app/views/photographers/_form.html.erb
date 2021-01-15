@@ -1,0 +1,13 @@
+<%= form_for @photographer do |f| %>
+<p><%= f.label :username %>
+    <%= f.text_field :username %></p>
+<p><%= f.label :email %>
+    <%= f.email_field :email %></p>
+<p><%= f.label :password %>
+    <%= f.password_field :password %></p>
+<p><%= f.label :location %>
+    <%= f.text_field :location %></p>
+<p><%= f.label :specialty %>
+    <%= f.text_field :specialty %></p>
+<%= f.submit%>
+<% end %>
