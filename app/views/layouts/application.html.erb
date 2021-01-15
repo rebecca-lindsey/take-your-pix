@@ -11,6 +11,16 @@
   </head>
 
   <body>
+  <a href="/"><h1 id="banner">Take Your Pix</h1></a>
+  <nav>
+    <%if logged_in?%>
+      <%= link_to "Logout", logout_path, method: :delete %>
+    <%else%>
+      <%= link_to "Login", login_path %>
+      <%= link_to "Signup as Photographer", new_photographer_path %>
+      <%= link_to "Signup as Client", new_client_path %>
+    <%end%>
+  </nav>
     <%= yield %>
   </body>
 </html>
