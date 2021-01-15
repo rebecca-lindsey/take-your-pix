@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    byebug
     if @photographer = Photographer.find_by(email: params[:user][:email])&.authenticate(params[:user][:password])
       session[:photographer_id] = @photographer.id
       redirect_to photographer_path(@photographer)

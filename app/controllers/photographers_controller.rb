@@ -1,5 +1,3 @@
 class PhotographersController < ApplicationController
-  def show
-    byebug
-  end
+  def show; end
 end
