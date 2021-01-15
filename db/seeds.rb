@@ -1,7 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Photographer.create(username: 'Valerie Elash', email: 'valerie@yourpix.com', password: 'abc123', location: 'Moldova', specialty: 'Bridal')
+Client.create(username: 'Lilea Rusu', email: 'lilea@yourpix.com', password: 'abc123', location: 'Moldova')
+Album.create(title: "Lilea's Bridal Photos", description: 'Beautiful shots of the bride before her big day', date: Date.new(2018, 6, 2), photographer_id: 1, client_id: 1)
+Photo.create(title: 'Looking Down', description: 'Looking down holding flowers', date: Date.new(2018, 6, 2), album_id: 1)
+Photo.create(title: 'Thoughtful', description: 'Laying on a sheet looking away thoughtfully', date: Date.new(2018, 6, 2), album_id: 1)
+Photo.create(title: 'Window', description: 'Looking out through a window in black and white', date: Date.new(2018, 6, 2), album_id: 1)
+Photo.create(title: 'Closeup', description: 'Closeup of flowers and makeup', date: Date.new(2018, 6, 2), album_id: 1)
