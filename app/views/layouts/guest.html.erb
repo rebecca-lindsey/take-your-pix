@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TakeYourPix</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+  <a href="/"><h1 id="banner">Take Your Pix</h1></a>
+  <nav>
+      <%= link_to "Login", login_path %> |
+      <%= link_to "Signup as Photographer", new_photographer_path %> |
+      <%= link_to "Signup as Client", new_client_path %>
+  </nav>
+    <%= yield %>
+  </body>
+</html>
