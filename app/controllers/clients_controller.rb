@@ -13,9 +13,9 @@ class ClientsController < ApplicationController
   end
 
   def create
-    byebug
     @client = Client.create(client_params)
     if @client.valid?
+      session[:client_id] = @client.id
       redirect_to client_path(@client)
     else
       render new_client_path
