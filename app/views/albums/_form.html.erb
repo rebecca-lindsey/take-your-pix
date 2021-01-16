@@ -8,6 +8,6 @@
 <p><%= f.label :date %>
     <%= f.date_field :date, max: Date.today %></p>
 <p><%= f.label :client %>
-    <%= f.collection_select :client_id, @photographer.clients.all, :id, :username %></p>
+    <%= f.collection_select :client_id, Client.all, :id, :username %></p>
 <%= f.submit%>
 <% end %>

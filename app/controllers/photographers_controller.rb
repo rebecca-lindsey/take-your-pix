@@ -41,6 +41,13 @@ class PhotographersController < ApplicationController
     end
   end
 
+  def destroy
+    @photographer = Photographer.find_by(id: params[:id])
+    @photographer.destroy
+    session.delete :photographer_id
+    redirect_to root_path
+  end
+
   private
 
   def photographer_params
