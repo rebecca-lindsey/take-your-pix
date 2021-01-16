@@ -16,11 +16,7 @@ module ApplicationHelper
   end
 
   def require_photographer
-    redirect_to login_path unless current_photographer
-  end
-
-  def require_client
-    redirect_to login_path unless current_client
+    redirect_to client_path(Client.find_by(id: session[:client_id])) unless current_photographer
   end
 
   def display_profile_link

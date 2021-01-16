@@ -15,6 +15,7 @@ class PhotographersController < ApplicationController
   def create
     @photographer = Photographer.create(photographer_params)
     if @photographer.valid?
+      session[:photographer_id] = @photographer.id
       redirect_to photographer_path(@photographer)
     else
       render new_photographer_path
