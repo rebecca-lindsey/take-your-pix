@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @photographer = Photographer.find_by(email: params[:user][:email])&.authenticate(params[:user][:password])
       session[:photographer_id] = @photographer.id
       redirect_to photographer_path(@photographer)
-    elsif @client = Client.find_by(email: params[:user][:email])
+    elsif @client = Client.find_by(email: params[:user][:email])&.authenticate(params[:user][:password])
       session[:client_id] = @client.id
       redirect_to client_path(@client)
     else

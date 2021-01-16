@@ -1,6 +1,4 @@
 <h1><%=@client.username%>'s Homepage</h1>
 <h2>Location: <%=@client.location%></h2>
 
-<ul>
-<%= render partial: "photographers/album", collection: @albums %>
-</ul>
+<%= display_user_albums %>
