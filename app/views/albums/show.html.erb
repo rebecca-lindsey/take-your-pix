@@ -1,0 +1,6 @@
+<h1><%= @album.title %></h1>
+<p><%= @album.description %></p>
+<p><%= @album.date %></p>
+<p><%= @album.location %></p>
+<p><%= link_to @photographer.username, photographer_path(@photographer) %></p>
+<p><%= link_to @client.username, client_path(@client) %></p>
