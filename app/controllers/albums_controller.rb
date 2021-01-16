@@ -1,2 +1,45 @@
 class AlbumsController < ApplicationController
+  def index
+    @albums = Album.all
+  end
+
+  def new
+    @album = Album.new
+  end
+
+  def create
+    @album = Album.create(album_params)
+    if @album.valid?
+      redirect_to album_path(@album)
+    else
+      render new_album_path
+    end
+  end
+
+  def show
+    @album = Album.find_by(id: params[:id])
+    @photos = @album.photos
+    @client = @album.client
+    @photographer = @album.photographer
+  end
+
+  def edit
+    @album = Album.find_by(id: params[:id])
+  end
+
+  def update
+    @album = Album.find_by(id: params[:id])
+    @album.update(album_params)
+    if @album.valid?
+      redirect_to album_path(@album)
+    else
+      render edit_album_path
+    end
+  end
+
+  private
+
+  def album_params
+    params.require(:album).permit(:title, :description, :date, :photographer_id, :client_id)
+  end
 end
