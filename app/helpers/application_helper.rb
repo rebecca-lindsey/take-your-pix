@@ -30,4 +30,8 @@ module ApplicationHelper
       link_to 'Your Profile', client_path(current_client)
     end
   end
+
+  def clean_time(date)
+    date.strftime('%A, %B %d, %Y')
+  end
 end

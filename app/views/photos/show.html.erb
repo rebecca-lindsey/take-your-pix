@@ -1,0 +1,4 @@
+<h1><%= @photo.title %></h1>
+<p><%= @photo.description %></p>
+<p><%= clean_time(@photo.date) %></p>
+<%= link_to @album.title, album_path(@album)%>
