@@ -24,6 +24,7 @@ class PhotographersController < ApplicationController
   def show
     @photographer = Photographer.find_by(id: params[:id])
     @albums = @photographer.albums
+    @clients = @photographer.clients
   end
 
   def edit
