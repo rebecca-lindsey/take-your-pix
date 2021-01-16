@@ -1,4 +1,6 @@
 class AlbumsController < ApplicationController
+  include AlbumsHelper
+
   def index
     @albums = Album.all
   end
