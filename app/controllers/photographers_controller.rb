@@ -2,6 +2,7 @@ class PhotographersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
   include PhotographersHelper
+  include UsersHelper
 
   def index
     @photographers = Photographer.all
@@ -21,7 +22,7 @@ class PhotographersController < ApplicationController
   end
 
   def show
-    @photographer = current_photographer
+    @photographer = Photographer.find_by(id: params[:id])
     @albums = @photographer.albums
   end
 
