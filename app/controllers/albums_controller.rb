@@ -27,6 +27,7 @@ class AlbumsController < ApplicationController
 
   def edit
     @album = Album.find_by(id: params[:id])
+    @photographer = @album.photographer
   end
 
   def update
