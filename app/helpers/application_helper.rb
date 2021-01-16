@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def current_client
-    current_photographer ||= Client.find_by(id: session[:client_id])
+    current_client ||= Client.find_by(id: session[:client_id])
   end
 
   def logged_in?

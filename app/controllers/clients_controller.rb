@@ -41,9 +41,16 @@ class ClientsController < ApplicationController
     end
   end
 
+  def destroy
+    @client = Client.find_by(id: params[:id])
+    @client.destroy
+    session.delete :client_id
+    redirect_to root_path
+  end
+
   private
 
   def client_params
-    params.require(:Client).permit(:username, :password, :password_confirmation, :email, :location)
+    params.require(:client).permit(:username, :password, :password_confirmation, :email, :location)
   end
 end
