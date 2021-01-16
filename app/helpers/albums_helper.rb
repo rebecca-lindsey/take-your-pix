@@ -6,4 +6,12 @@ module AlbumsHelper
       end
     end
   end
+
+  def display_all_albums
+    tag.ul do
+      @albums.each do |album|
+        concat tag.li(link_to(album.title, album_path(album)))
+      end
+    end
+  end
 end
