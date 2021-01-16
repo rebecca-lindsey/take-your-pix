@@ -2,6 +2,4 @@
 <h2>Location: <%=@photographer.location%></h2>
 <h2>Specialty: <%=@photographer.specialty%></h2>
 
-<ul>
-<%= render partial: "album", collection: @albums %>
-</ul>
+<%= display_user_albums %>
