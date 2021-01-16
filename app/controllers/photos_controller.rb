@@ -36,10 +36,17 @@ class PhotosController < ApplicationController
     end
   end
 
+  def destroy
+    @photo = Photo.find_by(id: params[:id])
+    @album = @photo.album
+    @photo.destroy
+    redirect_to album_path(@album)
+  end
+
   private
 
   def current_album
-    Album.find_by(id: params[:id])
+    Album.find_by(id: params[:album_id])
   end
 
   def photo_params
