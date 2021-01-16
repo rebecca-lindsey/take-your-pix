@@ -5,11 +5,13 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
+    @photographer = current_photographer
   end
 
   def create
-    @album = Album.create(album_params)
-    if @album.valid?
+    @photographer = current_photographer
+    if current_photographer.albums.build(album_params).save
+      @album = current_photographer.albums.last
       redirect_to album_path(@album)
     else
       render new_album_path
@@ -40,6 +42,6 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit(:title, :description, :date, :photographer_id, :client_id)
+    params.require(:album).permit(:title, :description, :date, :location, :photographer_id, :client_id)
   end
 end
