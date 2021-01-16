@@ -16,11 +16,7 @@
     <%if logged_in?%>
       <%= link_to "All Photographers", photographers_path %> |
       <%= link_to "All Clients", clients_path %> |
-      <% if current_photographer %>
-      <%= link_to "Your Profile", photographer_path(current_photographer) %> |
-      <% else %>
-      <%= link_to "Your Profile", client_path(current_client) %> |
-      <%end%>
+      <%= display_profile_link %> |
       <%= link_to "Logout", logout_path, method: :delete %>
     <%else%>
       <%= link_to "Login", login_path %> |
