@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :photographers
-  resources :albums
+  resources :albums do
+    resources :photos, only: %i[show new edit create update destroy]
+  end
   resources :clients
-  resources :photos
   root 'welcome#index'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

@@ -10,9 +10,9 @@ class PhotosController < ApplicationController
     @album = current_album
     if current_album.photos.build(photo_params).save
       @photo = current_album.photos.last
-      redirect_to photo_path(@photo)
+      redirect_to album_photo_path(current_album, @photo)
     else
-      render new_photo_path
+      render new_album_photo_path
     end
   end
 
@@ -30,9 +30,9 @@ class PhotosController < ApplicationController
     @photo = Photo.find_by(id: params[:id])
     @photo.update(photo_params)
     if @photo.valid?
-      redirect_to photo_path(@photo)
+      redirect_to album_photo_path(@photo, current_album)
     else
-      render edit_photo_path
+      render edit_album_photo_path
     end
   end
 
