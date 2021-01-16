@@ -1,0 +1,9 @@
+<%= form_for @photo do |f| %>
+<p><%= f.label :title %>
+    <%= f.text_field :title %></p>
+<p><%= f.label :description %>
+    <%= f.text_field :description %></p>
+<p><%= f.label :date %>
+    <%= f.date_field :date, value: @album.date, max: Date.today %></p>
+<%= f.submit%>
+<% end %>
