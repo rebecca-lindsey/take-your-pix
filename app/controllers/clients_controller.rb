@@ -9,15 +9,15 @@ class ClientsController < ApplicationController
   end
 
   def new
-    @client = Client.new
+    @user = Client.new
     session[:account_type] = 'Client'
   end
 
   def create
-    @client = Client.create(client_params)
-    if @client.valid?
-      session[:client_id] = @client.id
-      redirect_to client_path(@client)
+    @user = Client.create(client_params)
+    if @user.valid?
+      session[:user_id] = @user.id
+      redirect_to client_path(@user)
     else
       render new_client_path
     end
