@@ -4,30 +4,38 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    if @photographer = Photographer.find_by(email: params[:user][:email])&.authenticate(params[:user][:password])
-      session[:photographer_id] = @photographer.id
-      redirect_to photographer_path(@photographer)
-    elsif @client = Client.find_by(email: params[:user][:email])&.authenticate(params[:user][:password])
-      session[:client_id] = @client.id
-      redirect_to client_path(@client)
+    account_type = session[:account_type]
+    redirect_to login_path unless account_type == 'Photographer' || account_type == 'Client'
+    if user = account_type.constantize.find_by(email: params[:user][:email])&.authenticate(params[:user][:password])
+      session[:user_id] = user.id
+      if account_type == 'Photographer'
+        redirect_to photographer_path(user)
+      else
+        redirect_to client_path(user)
+      end
     else
-      render 'new'
+      redirect_to login_path
     end
   end
 
   def omniauth
-    user = Photographer.from_omniauth(request.env['omniauth.auth'])
+    account_type = session[:account_type]
+    user = account_type.constantize.from_omniauth(request.env['omniauth.auth'])
     if user.valid?
-      session[:photographer_id] = user.id
-      redirect_to photographer_path(user)
+      session[:user_id] = user.id
+      if account_type == 'Photographer'
+        redirect_to photographer_path(user)
+      else
+        redirect_to client_path(user)
+      end
     else
       redirect_to '/login'
     end
   end
 
   def destroy
-    session.delete :photographer_id unless session[:photographer_id].nil?
-    session.delete :client_id unless session[:client_id].nil?
+    session.delete :user_id
+    session.delete :account_type
     redirect_to root_path
   end
 end

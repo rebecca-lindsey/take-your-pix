@@ -1,0 +1,7 @@
+<%= form_for :user do |f| %>
+<p><%= f.label :photographer_account%>
+<%= f.radio_button :account_type, 'Photographer', checked: true %></p>
+<p><%= f.label :client_account%>
+<%= f.radio_button :account_type, 'Client'%></p>
+<%= f.submit "Continue"%>
+<% end %>

@@ -1,10 +1,10 @@
 module ApplicationHelper
   def current_photographer
-    current_photographer ||= Photographer.find_by(id: session[:photographer_id])
+    current_photographer ||= Photographer.find_by(id: session[:user_id]) if session[:account_type] == 'Photographer'
   end
 
   def current_client
-    current_client ||= Client.find_by(id: session[:client_id])
+    current_client ||= Client.find_by(id: session[:user_id]) if session[:account_type] == 'Client'
   end
 
   def logged_in?
