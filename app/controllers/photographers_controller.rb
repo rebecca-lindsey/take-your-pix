@@ -10,6 +10,7 @@ class PhotographersController < ApplicationController
 
   def new
     @photographer = Photographer.new
+    session[:account_type] = "Photographer"
   end
 
   def create

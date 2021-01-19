@@ -10,6 +10,7 @@ class ClientsController < ApplicationController
 
   def new
     @client = Client.new
+    session[:account_type] = 'Client'
   end
 
   def create
