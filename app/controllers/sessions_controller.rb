@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: %i[new create]
+  skip_before_action :require_login, only: %i[new create omniauth]
 
   def new; end
 
@@ -12,6 +12,16 @@ class SessionsController < ApplicationController
       redirect_to client_path(@client)
     else
       render 'new'
+    end
+  end
+
+  def omniauth
+    user = Photographer.from_omniauth(request.env['omniauth.auth'])
+    if user.valid?
+      session[:photographer_id] = user.id
+      redirect_to photographer_path(user)
+    else
+      redirect_to '/login'
     end
   end
 
