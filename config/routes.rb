@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :clients
   resources :welcome, only: :create, path: '/'
   get '/' => 'welcome#index', as: 'root'
-  # post '/' => 'welcome#index', as: 'root'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

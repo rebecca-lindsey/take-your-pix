@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
   def omniauth
     account_type = session[:account_type]
-    user = account_type.constantize.from_omniauth(request.env['omniauth.auth'])
+    user = account_type.constantize.from_omniauth(account_type, request.env['omniauth.auth'])
     if user.valid?
       session[:user_id] = user.id
       if account_type == 'Photographer'
