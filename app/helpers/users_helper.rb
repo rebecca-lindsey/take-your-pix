@@ -6,4 +6,12 @@ module UsersHelper
       end
     end
   end
+
+  def display_form_errors
+    tag.ul do
+      @user.errors.full_messages.each do |message|
+        concat tag.li(message) unless message.include?('digest')
+      end
+    end
+  end
 end

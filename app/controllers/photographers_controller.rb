@@ -9,15 +9,15 @@ class PhotographersController < ApplicationController
   end
 
   def new
-    @photographer = Photographer.new
-    session[:account_type] = "Photographer"
+    @user = Photographer.new
+    session[:account_type] = 'Photographer'
   end
 
   def create
-    @photographer = Photographer.create(photographer_params)
-    if @photographer.valid?
-      session[:photographer_id] = @photographer.id
-      redirect_to photographer_path(@photographer)
+    @user = Photographer.create(photographer_params)
+    if @user.valid?
+      session[:user_id] = @user.id
+      redirect_to photographer_path(@user)
     else
       render new_photographer_path
     end
