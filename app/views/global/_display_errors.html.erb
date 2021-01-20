@@ -1,0 +1,7 @@
+<%if object.errors %>
+    <ul>
+        <% object.errors.full_messages.each do |message| %>
+            <li><%= message unless message.include?('digest') %></li>
+        <% end %>
+    </ul>
+<% end %>
