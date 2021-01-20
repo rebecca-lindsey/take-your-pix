@@ -1,5 +1,7 @@
 <h1><%=@client.username%>'s Homepage</h1>
 <h2>Location: <%=@client.location%></h2>
+<% if current_client == @client %>
 <p><%= link_to "Edit Profile", edit_client_path(@client) %> | <%= link_to "Delete Profile", client_path, method: :delete %></p>
+<%end%>
 
 <%= display_user_albums %>
