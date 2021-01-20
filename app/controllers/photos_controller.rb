@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
-  before_action :require_photographer
-  skip_before_action :require_photographer, only: %i[show destroy]
+  before_action :require_photographer_as_self
+  skip_before_action :require_photographer_as_self, only: %i[show destroy]
 
   def new
     @photo = Photo.new

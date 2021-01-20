@@ -1,5 +1,6 @@
 class PhotographersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
+  before_action :require_photographer_as_self, only: %i[edit update destroy]
 
   def index
     @photographers = Photographer.all

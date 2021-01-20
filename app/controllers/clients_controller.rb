@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
+  before_action :require_client_as_self, only: %i[edit update destroy]
 
   def index
     @clients = Client.all
@@ -26,14 +27,14 @@ class ClientsController < ApplicationController
   end
 
   def edit
-    @client = current_client
+    @user = Client.find_by(id: params[:id])
   end
 
   def update
-    @client = current_client
-    @client.update(client_params)
-    if @client.valid?
-      redirect_to client_path(@client)
+    @user = Client.find_by(id: params[:id])
+    @user.update(client_params)
+    if @user.valid?
+      redirect_to client_path(@user)
     else
       render :edit
     end
