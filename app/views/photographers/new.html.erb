@@ -1,4 +1,4 @@
 <h1>New Photographer!</h1>
-<%= display_form_errors %>
+<%= render 'global/display_errors', object: @user %>
 <%= render 'form'%>
 <%= link_to "Login as Photographer", login_path%>

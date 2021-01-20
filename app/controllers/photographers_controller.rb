@@ -19,7 +19,7 @@ class PhotographersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to photographer_path(@user)
     else
-      render new_photographer_path
+      render :new
     end
   end
 
@@ -30,16 +30,16 @@ class PhotographersController < ApplicationController
   end
 
   def edit
-    @photographer = current_photographer
+    @user = current_photographer
   end
 
   def update
-    @photographer = current_photographer
-    @photographer.update(photographer_params)
-    if @photographer.valid?
-      redirect_to photographer_path(@photographer)
+    @user = current_photographer
+    @user.update(photographer_params)
+    if @user.valid?
+      redirect_to photographer_path(@user)
     else
-      render edit_photographer_path
+      render :edit
     end
   end
 

@@ -19,7 +19,7 @@ class ClientsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to client_path(@user)
     else
-      render new_client_path
+      render :new
     end
   end
 
@@ -38,7 +38,7 @@ class ClientsController < ApplicationController
     if @client.valid?
       redirect_to client_path(@client)
     else
-      render edit_client_path
+      render :edit
     end
   end
 
