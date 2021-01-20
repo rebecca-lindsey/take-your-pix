@@ -1,0 +1,5 @@
+<% if current_photographer %>
+    <%= link_to 'Your Profile', photographer_path(current_photographer) %>
+<% else %>
+    <%= link_to 'Your Profile', client_path(current_client) %>
+<% end %>

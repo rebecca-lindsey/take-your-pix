@@ -16,9 +16,10 @@
       <%= link_to "All Photographers", photographers_path %> |
       <%= link_to "All Clients", clients_path %> |
       <%= link_to "All Albums", albums_path %> |
-      <%= display_profile_link %> |
+      <%= render 'layouts/profile' %> |
       <%= link_to "Logout", logout_path, method: :delete %>
   </nav>
+    <%= render 'layouts/errors' %>
     <%= yield %>
   </body>
 </html>
