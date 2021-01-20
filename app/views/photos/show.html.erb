@@ -2,4 +2,4 @@
 <p><%= @photo.description %></p>
 <p><%= clean_time(@photo.date) %></p>
 <%= link_to @album.title, album_path(@album)%>
-<p><%= link_to "Edit Photo", edit_album_photo_path(@album) %> | <%= link_to "Delete Photo", album_photo_path, method: :delete %></p>
+<%= render "links" %>
