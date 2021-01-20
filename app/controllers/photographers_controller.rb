@@ -1,9 +1,6 @@
 class PhotographersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
-  include PhotographersHelper
-  include UsersHelper
-
   def index
     @photographers = Photographer.all
   end

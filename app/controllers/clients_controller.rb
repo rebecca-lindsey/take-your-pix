@@ -1,9 +1,6 @@
 class ClientsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
-  include ClientsHelper
-  include UsersHelper
-
   def index
     @clients = Client.all
   end

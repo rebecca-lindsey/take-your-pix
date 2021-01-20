@@ -1,7 +1,6 @@
 class PhotosController < ApplicationController
   before_action :require_photographer
   skip_before_action :require_photographer, only: %i[show destroy]
-  include PhotosHelper
 
   def new
     @photo = Photo.new
