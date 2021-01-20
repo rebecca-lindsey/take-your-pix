@@ -1,7 +1,9 @@
 <h1><%=@photographer.username%>'s Homepage</h1>
 <h2>Location: <%=@photographer.location%></h2>
 <h2>Specialty: <%=@photographer.specialty%></h2>
+<% if current_photographer == @photographer %>
 <p><%= link_to "Edit Profile", edit_photographer_path(@photographer) %> | <%= link_to "Delete Profile", photographer_path, method: :delete %></p>
+<p><%= link_to "Add New Album", new_album_path %></p>
+<%end%>
 
 <%= display_user_albums %>
-<p><%= link_to "Add New Album", new_album_path %></p>
