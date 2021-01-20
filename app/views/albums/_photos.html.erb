@@ -1,0 +1,5 @@
+<ul>
+    <% @photos.each do |photo| %>
+      <li><%= link_to(photo.title, album_photo_path(@album, photo)) %></li>
+    <% end %>
+</ul>

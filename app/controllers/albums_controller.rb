@@ -2,8 +2,6 @@ class AlbumsController < ApplicationController
   before_action :require_photographer
   skip_before_action :require_photographer, only: %i[index show destroy]
 
-  include AlbumsHelper
-
   def index
     @albums = Album.all
   end

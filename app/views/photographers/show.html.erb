@@ -6,4 +6,4 @@
 <p><%= link_to "Add New Album", new_album_path %></p>
 <%end%>
 
-<%= display_user_albums %>
+<%= render partial: "global/display_all", locals: {model: "Album", array: @albums} %>

@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   skip_before_action :require_login
-  include WelcomeHelper
   def index; end
 
   def create
