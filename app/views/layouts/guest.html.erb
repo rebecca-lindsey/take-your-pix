@@ -17,6 +17,8 @@
     <%= link_to "Signup as Photographer", new_photographer_path %> |
     <%= link_to "Signup as Client", new_client_path %>
   </nav>
+
+  <%= render 'layouts/errors' %>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,8 @@
+    <% array = model.constantize.all %>
+    <%tag.ul do %>
+      <% array.each do |element| %>
+        <% unless element.id == session[:user_id] %>
+          <%= concat tag.li(link_to(element.attributes.values[1], send("#{model.downcase}_path", element))) %>
+      <% end %>
+    <% end %>
+    <% end %>
