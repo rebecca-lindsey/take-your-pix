@@ -4,4 +4,6 @@ class Album < ApplicationRecord
   has_many :photos, dependent: :destroy
 
   validates :title, presence: true
+
+  def self.with_most_photos; end
 end

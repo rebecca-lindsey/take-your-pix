@@ -4,7 +4,8 @@ class PhotosController < ApplicationController
 
   def new
     @photo = Photo.new
-    @album = current_album
+    @album = Album.find_by(id: params[:album_id])
+    byebug
   end
 
   def create

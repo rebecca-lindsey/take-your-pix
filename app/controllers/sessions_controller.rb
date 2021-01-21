@@ -36,7 +36,6 @@ class SessionsController < ApplicationController
 
   def destroy
     %i[user_id account_type].each { |k| session.delete(k) }
-    byebug
     redirect_to root_path
   end
 
