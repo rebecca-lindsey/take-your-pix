@@ -1,4 +1,6 @@
 <h1>Welcome to Take Your Pix</h1>
 <p>Take Your Pix is a photo sharing application designed to make it easier for photographers to share albums with their clients.</p>
+<% unless logged_in? %>
 <h2>Start by selecting which account to use:</h2>
 <%= render 'form' %>
+<% end %>
