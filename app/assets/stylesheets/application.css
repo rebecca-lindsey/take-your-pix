@@ -42,7 +42,7 @@ a:hover {
 }
 
 .full-img {
-  object-fit: cover;
+  object-fit: fill;
   height: 100%;
   width: 500px;
 }

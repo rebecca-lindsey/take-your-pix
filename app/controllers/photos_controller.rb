@@ -20,7 +20,6 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find_by(id: params[:id])
     @album = @photo.album
-    byebug
   end
 
   def edit
