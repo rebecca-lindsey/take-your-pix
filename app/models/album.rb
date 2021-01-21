@@ -5,7 +5,11 @@ class Album < ApplicationRecord
 
   validates :title, presence: true
 
-  def self.with_most_photos
-    joins(:photos).group(:album_id).limit(1)
+  def self.with_most_photos(num)
+    joins(:photos).group('album_id').having("COUNT(*) == #{num}")
+  end
+
+  def self.highest_photo_count
+    joins(:photos).group('album_id').count.values[0]
   end
 end

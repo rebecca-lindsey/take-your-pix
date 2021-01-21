@@ -1,1 +1,3 @@
 <h1>Best Loved List</h1>
+
+<%= render partial: "display", locals: {model: "Album", array: @albums, dependent: "photo" } %>
