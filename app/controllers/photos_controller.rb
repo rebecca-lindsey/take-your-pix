@@ -20,6 +20,7 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find_by(id: params[:id])
     @album = @photo.album
+    byebug
   end
 
   def edit
@@ -52,6 +53,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:title, :description, :date, :location, :album_id)
+    params.require(:photo).permit(:title, :description, :date, :location, :album_id, :image)
   end
 end

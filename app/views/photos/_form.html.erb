@@ -5,5 +5,7 @@
     <%= f.text_field :description %></p>
 <p><%= f.label :date %>
     <%= f.date_field :date, value: @album.date, max: Date.today %></p>
+<p><%= f.label :image%>
+    <%= f.file_field :image, accept: 'image/png, image/gif, image/jpeg' %></p>
 <%= f.submit%>
 <% end %>
