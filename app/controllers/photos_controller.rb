@@ -5,16 +5,15 @@ class PhotosController < ApplicationController
   def new
     @photo = Photo.new
     @album = Album.find_by(id: params[:album_id])
-    byebug
   end
 
   def create
-    @album = current_album
-    if current_album.photos.build(photo_params).save
-      @photo = current_album.photos.last
+    @album = Album.find_by(id: params[:album_id])
+    @photo = @album.photos.build(photo_params)
+    if @photo.save
       redirect_to album_photo_path(current_album, @photo)
     else
-      render new_album_photo_path
+      render :new
     end
   end
 
@@ -30,11 +29,12 @@ class PhotosController < ApplicationController
 
   def update
     @photo = Photo.find_by(id: params[:id])
+    @album = @photo.album
     @photo.update(photo_params)
     if @photo.valid?
       redirect_to album_photo_path(@photo, current_album)
     else
-      render edit_album_photo_path
+      render :edit
     end
   end
 
