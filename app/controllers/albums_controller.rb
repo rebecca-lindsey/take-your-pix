@@ -13,11 +13,11 @@ class AlbumsController < ApplicationController
 
   def create
     @photographer = current_photographer
-    if current_photographer.albums.build(album_params).save
-      @album = current_photographer.albums.last
+    @album = current_photographer.albums.build(album_params)
+    if @album.save
       redirect_to album_path(@album)
     else
-      render new_album_path
+      render :new
     end
   end
 
@@ -39,7 +39,7 @@ class AlbumsController < ApplicationController
     if @album.valid?
       redirect_to album_path(@album)
     else
-      render edit_album_path
+      render :edit
     end
   end
 
