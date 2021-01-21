@@ -5,5 +5,7 @@ class Album < ApplicationRecord
 
   validates :title, presence: true
 
-  def self.with_most_photos; end
+  def self.with_most_photos
+    joins(:photos).group(:album_id).limit(1)
+  end
 end
