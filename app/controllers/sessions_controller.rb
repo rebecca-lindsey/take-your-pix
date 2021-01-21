@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create omniauth]
+  before_action :redirect_if_logged_in, only: %i[new create omniauth]
 
   def new; end
 
@@ -34,8 +35,18 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete :user_id
-    session.delete :account_type
+    %i[user_id account_type].each { |k| session.delete(k) }
+    byebug
     redirect_to root_path
+  end
+
+  private
+
+  def redirect_if_logged_in
+    if current_photographer
+      redirect_to photographer_path(current_photographer), notice: 'You are already logged in, please logout before trying that action'
+    elsif current_client
+      redirect_to client_path(current_client), notice: 'You are already logged in, please logout before trying that action'
+    end
   end
 end
