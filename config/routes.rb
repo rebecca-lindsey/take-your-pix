@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   end
   resources :clients
   resources :welcome, only: :create, path: '/'
-  get '/' => 'welcome#index', as: 'root'
+  get 'best_loved', to: 'best_loved#index'
+  get '/', to: 'welcome#index', as: 'root'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
