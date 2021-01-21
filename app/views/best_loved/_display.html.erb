@@ -1,9 +1,7 @@
-Highest <%= dependent %> count per <%= model %>: <%= @album_count %> </p>
+Highest <%= dependent %> count per <%= model %>: <%= count %> </p>
 
 <ul>
   <% array.each do |element| %>
-    <% unless element.id == session[:user_id] %>
       <li><%= link_to(element.attributes.values[1], send("#{model.downcase}_path", element)) %></li>
     <% end %>
-  <% end %>
 </ul>
