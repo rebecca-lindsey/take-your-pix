@@ -11,6 +11,14 @@ module ApplicationHelper
     current_photographer || current_client
   end
 
+  def valid_album
+    album = Album.find_by(id: params[:album_id])
+    if session[:account_type] == 'Photographer'
+      return true if album.nil? || album.photographer == current_photographer
+    end
+    false
+  end
+
   def clean_time(date)
     date.strftime('%A, %B %d, %Y')
   end
