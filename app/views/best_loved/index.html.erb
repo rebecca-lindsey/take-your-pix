@@ -1,3 +1,5 @@
 <h1>Best Loved List</h1>
 
-<%= render partial: "display", locals: {model: "Album", array: @albums, dependent: "photo" } %>
+<%= render partial: "display", locals: {model: "Album", array: @albums, dependent: "photo", count: @album_count } %>
+<%= render partial: "display", locals: {model: "Photographer", array: @photographers_top_album, dependent: "album", count: @photographer_album_count } %>
+<%= render partial: "display", locals: {model: "Client", array: @clients_top_photographer, dependent: "photographer", count: @client_photographer_count } %>
