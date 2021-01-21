@@ -7,6 +7,14 @@ class Photographer < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
+  def self.from_omniauth(response)
+    find_or_create_by(uid: response[:uid], provider: response[:provider]) do |p|
+      p.email = response[:info][:email]
+      p.username = response[:info][:name]
+      p.password = SecureRandom.hex(15)
+    end
+  end
+
   def self.with_most_albums(num)
     joins(:albums).group('photographer_id').having("COUNT(*) == #{num}")
   end
