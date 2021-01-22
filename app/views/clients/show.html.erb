@@ -4,4 +4,4 @@
 <p><%= link_to "Edit Profile", edit_client_path(@client) %> | <%= link_to "Delete Profile", client_path, method: :delete %></p>
 <%end%>
 
-<%= render partial: "global/display_all", locals: {model: "Album", array: @albums} %>
+<%= render "global/display_albums" %>

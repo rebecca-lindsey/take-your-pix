@@ -1,7 +1,9 @@
 <ul>
   <% array.each do |element| %>
     <% unless element == logged_in? %>
-      <li><%= link_to(element.attributes.values[1], send("#{model.downcase}_path", element)) %></li>
+      <li>
+      <%= link_to(element.attributes.values[1], send("#{model.downcase}_path", element)) %>
+      </li>
     <% end %>
   <% end %>
 </ul>

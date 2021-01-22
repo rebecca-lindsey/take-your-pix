@@ -37,9 +37,17 @@ html {
   min-height: 100%;
 }
 
+.album-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 #container {
   width: 65%;
   margin: auto;
+  padding-bottom: 20px;
 }
 
 p,
@@ -102,6 +110,12 @@ a:hover {
   width: 500px;
 }
 
+.thumbnail-img {
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+}
+
 textarea#album_description,
 textarea#photo_description {
   width: 30em;
@@ -121,4 +135,8 @@ input#photo_image {
 label {
   display: block;
   padding-bottom: 5px;
+}
+
+ul {
+  list-style-type: none;
 }

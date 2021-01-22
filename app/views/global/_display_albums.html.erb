@@ -1,0 +1,5 @@
+<div class="album-box">
+  <% @albums.each do |album| %>
+      <p><%= link_to image_tag(url_for(album.photos.first.image), class: "thumbnail-img"), album_path(album) %> <br><%= album.title%></p>
+  <% end %>
+</div>
