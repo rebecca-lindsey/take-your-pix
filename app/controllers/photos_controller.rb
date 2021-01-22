@@ -10,6 +10,7 @@ class PhotosController < ApplicationController
   def create
     @album = Album.find_by(id: params[:album_id])
     @photo = @album.photos.build(photo_params)
+    byebug
     if @photo.save
       redirect_to album_photo_path(current_album, @photo)
     else
