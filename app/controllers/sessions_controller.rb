@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         redirect_to client_path(user)
       end
     else
-      redirect_to login_path
+      redirect_to login_path, notice: 'Invalid Login! Remember Photographer and Client are different accounts - did you select the correct one?'
     end
   end
 
@@ -30,13 +30,13 @@ class SessionsController < ApplicationController
         redirect_to client_path(user)
       end
     else
-      redirect_to '/login'
+      redirect_to login_path, notice: 'Invalid Login/Signup! Remember Photographer and Client are different accounts - did you select the correct one? You can only sign up once per email address per account type.'
     end
   end
 
   def destroy
     %i[user_id account_type].each { |k| session.delete(k) }
-    redirect_to root_path
+    redirect_to root_path, notice: 'Successfully Logged Out!'
   end
 
   private
