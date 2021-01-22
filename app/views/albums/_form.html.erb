@@ -1,10 +1,10 @@
 <%= form_for @album do |f| %>
 <p><%= f.label :title %>
-    <%= f.text_field :title %></p>
+    <%= f.text_field :title, maxlength: 30, placeholder: "Max 30 characters" %></p>
 <p><%= f.label :description %>
-    <%= f.text_field :description %></p>
+    <%= f.text_field :description, maxlength: 255, placeholder: "Max 255 characters" %></p>
 <p><%= f.label :location %>
-    <%= f.text_field :location %></p>
+    <%= f.text_field :location, maxlength: 50, placeholder: "Max 50 characters" %></p>
 <p><%= f.label :date %>
     <%= f.date_field :date, max: Date.today %></p>
 <p><%= f.label :client %>

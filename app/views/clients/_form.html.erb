@@ -1,6 +1,6 @@
 <%= form_for @user do |f| %>
 <p><%= f.label :username %>
-    <%= f.text_field :username, required: true %></p>
+    <%= f.text_field :username, required: true, maxlength: 30, placeholder: "Max 30 characters"  %></p>
 <p><%= f.label :email %>
     <%= f.email_field :email, required: true %></p>
 <p><%= f.label :password %>
@@ -8,6 +8,6 @@
 <p><%= f.label :password_confirmation, required: true %>
     <%= f.password_field :password_confirmation %></p>
 <p><%= f.label :location %>
-    <%= f.text_field :location %></p>
+    <%= f.text_field :location, maxlength: 50, placeholder: "Max 50 characters"  %></p>
 <%= f.submit%>
 <% end %>
