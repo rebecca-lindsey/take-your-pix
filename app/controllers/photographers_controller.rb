@@ -25,6 +25,7 @@ class PhotographersController < ApplicationController
     @photographer = Photographer.find_by(id: params[:id])
     @albums = @photographer.albums
     @clients = @photographer.clients
+    byebug
   end
 
   def edit
