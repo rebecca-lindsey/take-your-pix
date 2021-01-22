@@ -11,6 +11,8 @@
   </head>
 
   <body>
+  <div class = "background">
+  <div id= "container">
   <a href="/"><h1 id="banner">Take Your Pix</h1></a>
   <nav>
     <%= link_to "Login Selection", root_path %> |
@@ -20,5 +22,7 @@
 
   <%= render 'layouts/errors' %>
     <%= yield %>
+    </div>
+    </div>
   </body>
 </html>
