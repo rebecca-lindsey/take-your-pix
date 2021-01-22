@@ -37,7 +37,7 @@ html {
   min-height: 100%;
 }
 
-.display-albums {
+.display-box {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -141,12 +141,6 @@ textarea#photo_description {
 
 input#photo_image {
   padding-bottom: 10px;
-}
-
-#photo-display {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 label {

@@ -1,9 +1,10 @@
 <h1><%= @album.title %></h1>
-<p><%= @album.description %></p>
-<p><%= clean_time(@album.date) %></p>
-<p>Location: <%= @album.location %></p>
-<p>Photographer: <%= link_to @photographer.username, photographer_path(@photographer) %></p>
-<p>Client: <%= link_to @client.username, client_path(@client) %></p>
+<h2><%= clean_time(@album.date) %></h2>
+<h2>Location: <%= @album.location %></h2>
+<h2>Photographer: <%= link_to @photographer.username, photographer_path(@photographer) %></h2>
+<h2>Client: <%= link_to @client.username, client_path(@client) %></h2>
+<h3><%= @album.description %></h3>
+
 <%= render "links" %>
 
 
