@@ -1,6 +1,6 @@
 <ul>
   <% array.each do |element| %>
-    <% unless element.id == session[:user_id] %>
+    <% unless element == logged_in? %>
       <li><%= link_to(element.attributes.values[1], send("#{model.downcase}_path", element)) %></li>
     <% end %>
   <% end %>
