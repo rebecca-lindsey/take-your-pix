@@ -2,11 +2,11 @@
 <p><%= f.label :username %>
     <%= f.text_field :username, required: true, maxlength: 30, placeholder: "Max 30 characters"  %></p>
 <p><%= f.label :email %>
-    <%= f.email_field :email, required: true %></p>
+    <%= f.email_field :email, size: 30, required: true %></p>
 <p><%= f.label :password %>
-    <%= f.password_field :password, required: true %></p>
+    <%= f.password_field :password, size: 30, required: true %></p>
 <p><%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, required: true %></p>
+    <%= f.password_field :password_confirmation, size: 30, required: true %></p>
 <p><%= f.label :location %>
     <%= f.text_field :location, maxlength: 50, placeholder: "Max 50 characters" %></p>
 <p><%= f.label :specialty %>
