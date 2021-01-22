@@ -48,8 +48,13 @@ html {
   margin: auto;
 }
 
-p {
+p,
+a {
   padding: 5px;
+}
+
+h1 {
+  padding: 10px;
 }
 
 input[type="text"],
