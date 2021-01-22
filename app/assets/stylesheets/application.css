@@ -31,13 +31,7 @@ html {
 }
 
 .background {
-  background-image: linear-gradient(
-    90deg,
-    #9d6c6c 0%,
-    hsl(0, 20%, 92%) 15%,
-    hsl(0, 20%, 92%) 85%,
-    #9d6c6c 100%
-  );
+  background-image: linear-gradient(#efe7e7 0%, #c6a3c8 100%);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100%;
@@ -68,7 +62,7 @@ h1 {
   display: flex;
   align-content: center;
   flex-direction: column;
-  border-bottom: 2px #9d6c6c dotted;
+  border-bottom: 2px #6e4672 dotted;
   padding-bottom: 10px;
 }
 
