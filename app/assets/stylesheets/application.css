@@ -52,8 +52,17 @@ h1 {
 }
 
 #banner {
+  padding: 20px;
+}
+
+#banner a {
   font-family: "Satisfy", cursive;
   font-size: 50px;
+  color: #7e1173;
+}
+
+#banner a:hover {
+  color: #5b0b53;
 }
 
 #header {
@@ -67,7 +76,7 @@ h1 {
 }
 
 body {
-  color: #252d26;
+  color: #312f30;
 }
 
 a {
@@ -77,6 +86,7 @@ a {
 
 a:hover {
   color: #361fad;
+  color: #360731;
 }
 
 .field_with_errors {
