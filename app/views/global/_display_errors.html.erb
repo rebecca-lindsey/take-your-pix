@@ -1,7 +1,7 @@
 <%if object.errors %>
-    <ul>
+    <ul class="form-error">
         <% object.errors.full_messages.each do |message| %>
-            <li><%= message unless message.include?('digest') %></li>
+            <li><%= message %></li>
         <% end %>
     </ul>
 <% end %>
