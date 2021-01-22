@@ -48,6 +48,16 @@ html {
   margin: auto;
 }
 
+p {
+  padding: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  size: 50;
+}
+
 body {
   color: #252d26;
 }
