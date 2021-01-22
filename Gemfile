@@ -17,7 +17,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-google-oauth2'
 gem 'omniauth', '~> 1.5'
-# gem 'omniauth-oauth2', '~> 1.4.0'
+gem 'active_storage_validations'
 gem 'dotenv-rails'
 # gem omniauth-github (1.4.0)
 #       omniauth (~> 1.5)

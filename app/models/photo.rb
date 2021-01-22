@@ -4,7 +4,7 @@ class Photo < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 30 }
   validates :description, length: { maximum: 255 }
-  validates :location, length: { maximum: 50 }
+  validates :image, attached: true
 
   def to_param
     "#{id}-#{title.parameterize}"
