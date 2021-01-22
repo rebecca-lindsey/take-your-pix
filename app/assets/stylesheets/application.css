@@ -51,7 +51,7 @@ html {
 }
 
 #container {
-  width: 65%;
+  width: 70%;
   margin: auto;
   padding-bottom: 20px;
 }
@@ -65,10 +65,6 @@ a {
   padding: 5px;
 }
 
-h1 {
-  padding: 10px;
-}
-
 #banner {
   padding: 20px;
 }
@@ -77,6 +73,7 @@ h1 {
   font-family: "Satisfy", cursive;
   font-size: 2em;
   color: #7e1173;
+  padding: 10px;
 }
 
 #banner a:hover {
@@ -138,6 +135,10 @@ textarea#photo_description {
   height: 4em;
 }
 
+.content {
+  padding-top: 10px;
+}
+
 input#photo_image {
   padding-bottom: 10px;
 }
@@ -151,6 +152,15 @@ input#photo_image {
 label {
   display: block;
   padding-bottom: 5px;
+}
+
+label[for="user_photographer_account"],
+label[for="user_client_account"] {
+  display: inline;
+}
+
+#welcome-form {
+  display: flex;
 }
 
 ul {

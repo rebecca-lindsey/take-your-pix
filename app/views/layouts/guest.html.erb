@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>TakeYourPix</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <html>
+    <head>
+      <title>TakeYourPix</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato&family=Satisfy&display=swap" rel="stylesheet">
-  </head>
+      <%= stylesheet_link_tag 'application', media: 'all' %>
+      <%= javascript_pack_tag 'application' %>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Lato&family=Satisfy&display=swap" rel="stylesheet">
+    </head>
 
   <body>
-  <div class = "background">
-  <div id= "container">
-  <div id="header">
-    <a href="/"><h1 id="banner">Take Your Pix</h1></a>
-    <nav>
-      <%= link_to "Login Selection", root_path %> |
-      <%= link_to "Signup as Photographer", new_photographer_path %> |
-      <%= link_to "Signup as Client", new_client_path %>
-    </nav>
-  </div>
-  <%= render 'layouts/errors' %>
-    <%= yield %>
-    </div>
+    <div class = "background">
+      <div id= "container">
+        <div id="header">
+          <a href="/"><h1 id="banner">Take Your Pix</h1></a>
+          <nav>
+            <%= link_to "Login Selection", root_path %> |
+            <%= link_to "Signup as Photographer", new_photographer_path %> |
+            <%= link_to "Signup as Client", new_client_path %>
+          </nav>
+        </div>
+        <div class="content">
+          <%= render 'layouts/errors' %>
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>
