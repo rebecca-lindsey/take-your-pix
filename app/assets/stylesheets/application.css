@@ -112,6 +112,12 @@ input#photo_image {
   padding-bottom: 10px;
 }
 
+#photo-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 label {
   display: block;
   padding-bottom: 5px;
