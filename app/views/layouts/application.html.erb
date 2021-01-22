@@ -1,37 +1,39 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>TakeYourPix</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <html>
+    <head>
+      <title>TakeYourPix</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato&family=Satisfy&display=swap" rel="stylesheet">
-  </head>
+      <%= stylesheet_link_tag 'application', media: 'all' %>
+      <%= javascript_pack_tag 'application' %>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Lato&family=Satisfy&display=swap" rel="stylesheet">
+    </head>
 
-  <body>
-  <div class = "background">
-  <div id="container">
-  <div id="header">
-    <h1 id="banner"><a href="/">Take Your Pix</a></h1>
-    <nav>
-      <%= link_to "Best Loved", best_loved_path %> |
-      <%= link_to "All Photographers", photographers_path %> |
-      <%= link_to "All Clients", clients_path %> |
-      <%= link_to "All Albums", albums_path %> |
-      <%= render 'layouts/profile_link' %> |
-      <%= link_to "Logout", logout_path, method: :delete %>
-    </nav>
-    <div id="user">
-      Logged in as: <%= render 'layouts/loggedin' %>
-    </div>
-  </div>
-    <%= render 'layouts/errors' %>
-    <%= yield %>
-    </div>
-    </div>
-  </body>
-</html>
+    <body>
+      <div class = "background">
+        <div id="container">
+          <div id="header">
+            <h1 id="banner"><a href="/">Take Your Pix</a></h1>
+            <nav>
+              <%= link_to "Best Loved", best_loved_path %> |
+              <%= link_to "All Photographers", photographers_path %> |
+              <%= link_to "All Clients", clients_path %> |
+              <%= link_to "All Albums", albums_path %> |
+              <%= render 'layouts/profile_link' %> |
+              <%= link_to "Logout", logout_path, method: :delete %>
+            </nav>
+            <div id="user">
+              Logged in as: <%= render 'layouts/loggedin' %>
+            </div>
+          </div>
+          <div class="content">
+            <%= render 'layouts/errors' %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>

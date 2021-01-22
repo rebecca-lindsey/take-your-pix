@@ -1,8 +1,12 @@
-<div class="album-box">
-  <% @albums.each do |album| %>
-    <div class="images">
-      <p><%= link_to image_tag(url_for(album.photos.first.image), class: "thumbnail-img"), album_path(album) %> </p>
-      <p class="caption"><%= album.title%></p>
-    </div>
-  <% end %>
-</div>
+<% if @albums.empty? %>
+  <p>You don't have any Albums yet!</p>
+<% else %>
+  <div class="album-box">
+    <% @albums.each do |album| %>
+      <div class="images">
+        <p><%= link_to image_tag(url_for(album.photos.first.image), class: "thumbnail-img"), album_path(album) %> </p>
+        <p class="caption"><%= album.title%></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>

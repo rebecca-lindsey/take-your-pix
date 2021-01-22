@@ -1,7 +1,9 @@
 <%= form_for :user do |f| %>
+<div id="welcome-form">
 <p><%= f.label :photographer_account%>
 <%= f.radio_button :account_type, 'Photographer', checked: true %></p>
 <p><%= f.label :client_account%>
 <%= f.radio_button :account_type, 'Client'%></p>
+</div>
 <%= f.submit "Continue to Login"%>
 <% end %>
