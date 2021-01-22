@@ -114,6 +114,12 @@ a:hover {
   object-fit: cover;
   height: 200px;
   width: 200px;
+  padding-top: 20px;
+}
+
+.caption {
+  text-align: center;
+  padding-top: 0;
 }
 
 textarea#album_description,

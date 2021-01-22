@@ -1,5 +1,8 @@
-<ul>
-    <% @photos.each do |photo| %>
-      <li><%= link_to(photo.title, album_photo_path(@album, photo)) %></li>
-    <% end %>
-</ul>
+<div class="album-box">
+  <% @photos.each do |photo| %>
+  <div class="images">
+      <p><%= link_to image_tag(url_for(photo.image), class: "thumbnail-img"), album_photo_path(@album, photo) %></p>
+      <p class="caption"><%= photo.title%></p>
+  </div>
+  <% end %>
+</div>
