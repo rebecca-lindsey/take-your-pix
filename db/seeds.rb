@@ -30,10 +30,10 @@ Photo.create(title: 'Sniff', description: 'Bailey takes a big sniff of the light
 
 Album.create(title: 'Puppy Bailey', description: 'An adorable Corgi puppy', date: Date.new(2019, 6, 18), photographer_id: 2, client_id: 3)
 Photo.create(title: 'Under the Leaves', description: 'Bailey hangs out by a plant on the bed', date: Date.new(2019, 6, 18), album_id: 5).image.attach(io: File.open('app/assets/images/seed_images/dogs/dog_7.jpg'), filename: 'dog_7.jpg')
-Photo.create(title: 'After a Yawn', description: 'Bailey is caught mid-yawn on an orange background', date: Date.new(2019, 6, 10), album_id: 5).image.attach(io: File.open('app/assets/images/seed_images/dogs/dog_8.jpg'), filename: 'dog_8.jpg')
-Photo.create(title: 'Posing', description: 'Bailey poses for the camera', date: Date.new(2019, 6, 28), album_id: 5).image.attach(io: File.open('app/assets/images/seed_images/dogs/dog_9.jpg'), filename: 'dog_9.jpg')
+Photo.create(title: 'After a Yawn', description: 'Bailey is caught mid-yawn on an orange background', date: Date.new(2019, 6, 18), album_id: 5).image.attach(io: File.open('app/assets/images/seed_images/dogs/dog_8.jpg'), filename: 'dog_8.jpg')
+Photo.create(title: 'Posing', description: 'Bailey poses for the camera', date: Date.new(2019, 6, 18), album_id: 5).image.attach(io: File.open('app/assets/images/seed_images/dogs/dog_9.jpg'), filename: 'dog_9.jpg')
 
-Album.create(title: 'Delicate Roses', description: 'A collection of gorgeous roses', date: Date.new(2017, 5, 25), photographer_id: 4, client_id: 4)
+Album.create(title: 'Delicate Roses', description: 'A collection of gorgeous roses', date: Date.new(2017, 5, 25), photographer_id: 3, client_id: 4)
 Photo.create(title: 'Pink Rose', description: 'A pink rose with buds behind it', date: Date.new(2017, 5, 25), album_id: 6).image.attach(io: File.open('app/assets/images/seed_images/flowers/flower_1.jpg'), filename: 'flower_1.jpg')
 Photo.create(title: 'Yellow Rose Portrait', description: 'A close up of a light yellow rose', date: Date.new(2017, 5, 25), album_id: 6).image.attach(io: File.open('app/assets/images/seed_images/flowers/flower_2.jpg'), filename: 'flower_2.jpg')
 Photo.create(title: 'Pink Rose Wall', description: 'A stone wall with pink roses', date: Date.new(2017, 5, 25), album_id: 6).image.attach(io: File.open('app/assets/images/seed_images/flowers/flower_3.jpg'), filename: 'flower_3.jpg')
