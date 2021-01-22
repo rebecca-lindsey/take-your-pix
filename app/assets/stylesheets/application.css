@@ -28,7 +28,6 @@
 body,
 html {
   height: 100%;
-  font-family: "Lato", sans-serif;
 }
 
 .background {
@@ -58,7 +57,7 @@ h1 {
 
 #banner a {
   font-family: "Satisfy", cursive;
-  font-size: 50px;
+  font-size: 2em;
   color: #7e1173;
 }
 
@@ -77,7 +76,8 @@ h1 {
 }
 
 body {
-  color: #312f30;
+  font-family: "Lato", sans-serif;
+  color: #1a191a;
 }
 
 a {
@@ -100,4 +100,19 @@ a:hover {
   object-fit: fill;
   height: 100%;
   width: 500px;
+}
+
+textarea#album_description,
+textarea#photo_description {
+  width: 30em;
+  height: 4em;
+}
+
+input#photo_image {
+  padding-bottom: 10px;
+}
+
+label {
+  display: block;
+  padding-bottom: 5px;
 }

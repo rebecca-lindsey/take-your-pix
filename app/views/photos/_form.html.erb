@@ -2,7 +2,7 @@
 <p><%= f.label :title %>
     <%= f.text_field :title, maxlength: 30, placeholder: "Max 30 characters" %></p>
 <p><%= f.label :description %>
-    <%= f.text_field :description, maxlength: 255, placeholder: "Max 255 characters" %></p>
+    <%= f.text_area :description, maxlength: 255, placeholder: "Max 255 characters" %></p>
 <p><%= f.label :date %>
     <%= f.date_field :date, value: @album.date, max: Date.today %></p>
 <p><%= f.label :image%>
