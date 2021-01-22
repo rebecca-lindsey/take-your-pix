@@ -90,6 +90,10 @@ a {
   padding-bottom: 10px;
 }
 
+#user {
+  padding-top: 5px;
+}
+
 body {
   font-family: "Lato", sans-serif;
   color: #1a191a;
