@@ -21,8 +21,34 @@
  Text: #252D26
  */
 
+* {
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.background {
+  background-image: linear-gradient(
+    90deg,
+    #9d6c6c 0%,
+    hsl(0, 20%, 92%) 15%,
+    hsl(0, 20%, 92%) 85%,
+    #9d6c6c 100%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+}
+
+#container {
+  width: 70%;
+  margin: auto;
+}
+
 body {
-  background-color: #efe7e7;
   color: #252d26;
 }
 
