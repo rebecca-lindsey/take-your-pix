@@ -129,8 +129,8 @@ a:hover {
   color: #360731;
 }
 
-.field_with_errors {
-  color: red;
+.field_with_errors input {
+  border: 2px red dashed;
   font-weight: bold;
   display: inline-block;
 }
@@ -151,6 +151,11 @@ a:hover {
 .caption {
   text-align: center;
   padding-top: 0;
+}
+
+.form-error,
+.error-message {
+  background-color: #dcc0dd;
 }
 
 textarea#album_description,
