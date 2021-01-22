@@ -37,6 +37,12 @@ html {
   min-height: 100%;
 }
 
+.display-albums {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .album-box {
   display: flex;
   flex-direction: row;
@@ -48,6 +54,10 @@ html {
   width: 65%;
   margin: auto;
   padding-bottom: 20px;
+}
+
+.center-text {
+  text-align: center;
 }
 
 p,

@@ -3,5 +3,7 @@
 <% if current_client == @client %>
 <p><%= link_to "Edit Profile", edit_client_path(@client) %> | <%= link_to "Delete Profile", client_path, method: :delete %></p>
 <%end%>
-
-<%= render "global/display_albums" %>
+<div class="display-albums">
+    <h2 class="center-text">Albums</h2>
+    <%= render "global/display_albums" %>
+</div>
