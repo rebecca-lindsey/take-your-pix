@@ -111,13 +111,13 @@ nav {
 
 nav a {
   min-width: 100px;
-  background-color: #c6a3c8;
+  background-color: #dcc0dd;
   padding: 10px;
   box-shadow: 5px 5px 5px #1a191a;
 }
 
 nav a:hover {
-  background-color: #d7bfd9;
+  background-color: #d1afd4;
 }
 
 nav > a + a {
