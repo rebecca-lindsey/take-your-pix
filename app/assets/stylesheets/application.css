@@ -40,3 +40,9 @@ a:hover {
   font-weight: bold;
   display: inline-block;
 }
+
+.full-img {
+  object-fit: fill;
+  height: 100%;
+  width: 500px;
+}
