@@ -26,7 +26,6 @@ class AlbumsController < ApplicationController
     @photos = @album.photos
     @client = @album.client
     @photographer = @album.photographer
-    byebug
   end
 
   def edit
