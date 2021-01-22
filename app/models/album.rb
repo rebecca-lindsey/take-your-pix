@@ -3,7 +3,8 @@ class Album < ApplicationRecord
   belongs_to :client
   has_many :photos, dependent: :destroy
 
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 30,
+                                              too_long: 'Album title must be less than 30 characters' }
 
   def to_param
     "#{id}-#{title.parameterize}"

@@ -4,7 +4,8 @@ class Client < ApplicationRecord
   has_secure_password
 
   validates :email, presence: true, uniqueness: true
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true, length: { maximum: 30,
+                                                                   too_long: 'Username must be less than 30 characters' }
   validates :password_digest, presence: true
 
   def to_param
