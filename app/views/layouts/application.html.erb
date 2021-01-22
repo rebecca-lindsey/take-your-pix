@@ -8,23 +8,27 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
   </head>
 
   <body>
   <div class = "background">
   <div id="container">
-  <a href="/"><h1 id="banner">Take Your Pix</h1></a>
-  <nav>
+  <div id="header">
+    <a href="/"><h1 id="banner">Take Your Pix</h1></a>
+    <nav>
       <%= link_to "Best Loved", best_loved_path %> |
       <%= link_to "All Photographers", photographers_path %> |
       <%= link_to "All Clients", clients_path %> |
       <%= link_to "All Albums", albums_path %> |
       <%= render 'layouts/profile_link' %> |
       <%= link_to "Logout", logout_path, method: :delete %>
-  </nav>
+    </nav>
     <div id="user">
-    Logged in as: <%= render 'layouts/loggedin' %>
+      Logged in as: <%= render 'layouts/loggedin' %>
     </div>
+  </div>
     <%= render 'layouts/errors' %>
     <%= yield %>
     </div>
