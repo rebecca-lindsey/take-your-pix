@@ -44,7 +44,7 @@ html {
 }
 
 #container {
-  width: 70%;
+  width: 65%;
   margin: auto;
 }
 
@@ -57,10 +57,19 @@ h1 {
   padding: 10px;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-  size: 50;
+#banner {
+  font-family: "Satisfy", cursive;
+  font-size: 50px;
+}
+
+#header {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  border-bottom: 2px #9d6c6c dotted;
+  padding-bottom: 10px;
 }
 
 body {
