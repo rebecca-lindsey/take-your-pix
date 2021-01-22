@@ -7,6 +7,10 @@ class Photographer < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
+  def to_param
+    "#{id}-#{username.parameterize}"
+  end
+
   def self.from_omniauth(response)
     find_or_create_by(uid: response[:uid], provider: response[:provider]) do |p|
       p.email = response[:info][:email]
