@@ -25,6 +25,6 @@ class Client < ApplicationRecord
   end
 
   def self.highest_photographer_count
-    joins(:photographers).group('client_id').count.values[0]
+    joins(:photographers).group('client_id').order('count_all DESC').limit(1).count.values[0]
   end
 end

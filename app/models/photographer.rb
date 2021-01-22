@@ -25,6 +25,6 @@ class Photographer < ApplicationRecord
   end
 
   def self.highest_album_count
-    joins(:albums).group('photographer_id').count.values[0]
+    joins(:albums).group('photographer_id').order('count_all DESC').limit(1).count.values[0]
   end
 end
