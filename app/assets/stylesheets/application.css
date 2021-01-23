@@ -65,6 +65,10 @@ a {
   padding: 5px;
 }
 
+form p:last-of-type {
+  padding-bottom: 15px;
+}
+
 #banner {
   padding: 20px;
 }
@@ -169,6 +173,13 @@ textarea#photo_description {
 
 input#photo_image {
   padding-bottom: 10px;
+}
+
+input[type="submit"] {
+  font-family: "Lato", sans-serif;
+  color: #5b0b53;
+  padding: 5px;
+  cursor: pointer;
 }
 
 label {
