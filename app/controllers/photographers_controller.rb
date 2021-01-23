@@ -33,6 +33,12 @@ class PhotographersController < ApplicationController
 
   def update
     @user = current_photographer
+    unless @user.email == photographer_params[:email] || Photographer.find_by(email: photographer_params[:email]).nil?
+      flash.now.notice = 'Invalid email'
+      render :edit
+      return
+    end
+
     @user.update(photographer_params)
     if @user.valid?
       redirect_to photographer_path(@user)

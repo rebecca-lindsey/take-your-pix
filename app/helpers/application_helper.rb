@@ -15,6 +15,8 @@ module ApplicationHelper
     album = Album.find_by(id: params[:album_id])
     if session[:account_type] == 'Photographer'
       return true if album.nil? || album.photographer == current_photographer
+    elsif session[:account_type] == 'Client'
+      return true if album.nil? || album.client == current_client
     end
     false
   end

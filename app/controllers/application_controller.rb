@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_client_as_self
-    unless session[:account_type] == 'Client' && session[:user_id].to_s == params[:id] || Album.find_by(id: params[:album_id]).client == current_client
+    unless session[:account_type] == 'Client' && session[:user_id].to_s == params[:id] || valid_album
       if session[:account_type] == 'Client'
         redirect_to client_path(current_client), notice: 'You can only modify your own things'
       else

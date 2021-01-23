@@ -103,6 +103,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #882a7f;
+}
+
 nav {
   display: flex;
   justify-content: center;
@@ -122,11 +126,6 @@ nav a:hover {
 
 nav > a + a {
   border-left: 1px solid #5b0b53;
-}
-
-a:hover {
-  color: #361fad;
-  color: #360731;
 }
 
 .field_with_errors input {

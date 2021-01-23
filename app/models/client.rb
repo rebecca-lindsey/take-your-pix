@@ -3,10 +3,13 @@ class Client < ApplicationRecord
   has_many :photographers, through: :albums
   has_secure_password
 
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true, on: :create
+  validates :email, presence: true, on: :update
   validates :username, presence: true, uniqueness: true, length: { maximum: 30 }
   validates :password_digest, presence: true
   validates :location, length: { maximum: 50 }
+
+  before_save { email.downcase! }
 
   def to_param
     "#{id}-#{username.parameterize}"
