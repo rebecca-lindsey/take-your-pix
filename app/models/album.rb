@@ -12,15 +12,7 @@ class Album < ApplicationRecord
     "#{id}-#{title.parameterize}"
   end
 
-  def self.with_most_photos(num)
-    joins(:photos).group('album_id').having("COUNT(*) == #{num}")
-  end
-
-  def self.highest_photo_count
-    joins(:photos).group('album_id').order('count_all DESC').limit(1).count.values[0]
-  end
-
-  def self.all_by_photos
+def self.all_by_photos
     joins(:photos).group('albums.id').order('count(photos.id) DESC').to_a
   end
 end

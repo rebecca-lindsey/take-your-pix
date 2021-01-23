@@ -23,14 +23,6 @@ class Photographer < ApplicationRecord
     end
   end
 
-  def self.with_most_albums(num)
-    joins(:albums).group('photographer_id').having("COUNT(*) == #{num}")
-  end
-
-  def self.highest_album_count
-    joins(:albums).group('photographer_id').order('count_all DESC').limit(1).count.values[0]
-  end
-
   def self.all_by_albums
     joins(:albums).group('photographers.id').order('count(albums.id) DESC').to_a
   end

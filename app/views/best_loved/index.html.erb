@@ -1,5 +1,17 @@
-<h1>Best Loved List</h1>
+<h1 id="best-header">Best Loved List</h1>
 
-<%= render partial: "display", locals: {model: "Album", array: @albums, dependent: "photo", count: @album_count } %>
-<%= render partial: "display", locals: {model: "Photographer", array: @photographers_top_album, dependent: "album", count: @photographer_album_count } %>
-<%= render partial: "display", locals: {model: "Client", array: @clients_top_photographer, dependent: "photographer", count: @client_photographer_count } %>
+<div class="best-box">
+    <div class="images">
+        <h2 class="best-category">Highest Photo count per Album: <%= @top_album.photos.count %> </h2>
+        <p><%= link_to image_tag(url_for(@top_album.photos.first.image), class: "thumbnail-img"), album_path(@top_album) %></p>
+        <h3 class="caption"> <%= @top_album.title %></h3>
+    </div>
+    <div class="images">
+        <h2 class="best-category">Highest Album count per Photographer: <%= @top_photographer.albums.count %></h2>
+        <%= render partial: "display_user", locals: {model: "Photographer", user: @top_photographer} %>
+    </div>
+    <div class="images">
+        <h2 class="best-category">Highest Album count per Client: <%= @top_client.albums.count %></h2>
+        <%= render partial: "display_user", locals: {model: "Client", user: @top_client} %>
+    </div>
+</div>
