@@ -1,5 +1,10 @@
 <% if current_photographer == @album.photographer %>
-    <p><%= link_to "Edit Photo", edit_album_photo_path(@album) %> | <%= link_to "Delete Photo", album_photo_path, method: :delete %></p>
+    <div class="link-buttons">
+        <%= link_to "Edit Photo", edit_album_photo_path(@album, @photo), class: "button" %>
+        <%= link_to "Delete Photo", album_photo_path, class: "button", method: :delete %>
+    </div>
 <% elsif current_client == @album.client %>
-    <p><%= link_to "Delete Photo", album_photo_path, method: :delete %></p>
+    <div class="link-buttons">
+        <%= link_to "Delete Photo", album_photo_path, class: "button", method: :delete %>
+    </div>
 <%end%>
