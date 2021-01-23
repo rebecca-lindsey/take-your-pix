@@ -41,7 +41,7 @@ class PhotographersController < ApplicationController
 
     @user.update(photographer_params)
     if @user.valid?
-      redirect_to photographer_path(@user)
+      redirect_to photographer_path(@user), notice: 'Photographer successfully updated!'
     else
       render :edit
     end
@@ -51,7 +51,7 @@ class PhotographersController < ApplicationController
     @photographer = Photographer.find_by(id: params[:id])
     @photographer.destroy
     %i[user_id account_type].each { |k| session.delete(k) }
-    redirect_to root_path
+    redirect_to root_path, notice: 'Photographer and associated Albums were deleted!'
   end
 
   private

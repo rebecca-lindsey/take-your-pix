@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
     @album = Album.find_by(id: params[:album_id])
     @photo = @album.photos.build(photo_params)
     if @photo.save
-      redirect_to album_photo_path(current_album, @photo)
+      redirect_to album_photo_path(@album, @photo)
     else
       render :new
     end
@@ -32,7 +32,7 @@ class PhotosController < ApplicationController
     @album = @photo.album
     @photo.update(photo_params)
     if @photo.valid?
-      redirect_to album_photo_path(@album, @photo)
+      redirect_to album_photo_path(@album, @photo), notice: 'Photo successfully updated!'
     else
       render :edit
     end
@@ -42,14 +42,10 @@ class PhotosController < ApplicationController
     @photo = Photo.find_by(id: params[:id])
     @album = @photo.album
     @photo.destroy
-    redirect_to album_path(@album)
+    redirect_to album_path(@album), notice: 'Photo deleted!'
   end
 
   private
-
-  def current_album
-    Album.find_by(id: params[:album_id])
-  end
 
   def photo_params
     params.require(:photo).permit(:title, :description, :date, :location, :album_id, :image)

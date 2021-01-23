@@ -41,7 +41,7 @@ class ClientsController < ApplicationController
 
     @user.update(client_params)
     if @user.valid?
-      redirect_to client_path(@user)
+      redirect_to client_path(@user), notice: 'Client successfully updated!'
     else
       render :edit
     end
@@ -51,7 +51,7 @@ class ClientsController < ApplicationController
     @client = Client.find_by(id: params[:id])
     @client.destroy
     %i[user_id account_type].each { |k| session.delete(k) }
-    redirect_to root_path
+    redirect_to root_path, notice: 'Client and all associated Albums were deleted!'
   end
 
   private
