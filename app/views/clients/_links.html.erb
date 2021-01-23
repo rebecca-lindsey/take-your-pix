@@ -1,0 +1,6 @@
+<% if current_client == @client %>
+    <div class="link-buttons">
+        <%= link_to "Edit Profile", edit_client_path(@client), class: "button" %>
+        <%= link_to "Delete Profile", client_path, class: "button", method: :delete %>
+    </div>
+<%end%>

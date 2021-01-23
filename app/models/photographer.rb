@@ -26,4 +26,9 @@ class Photographer < ApplicationRecord
   def self.all_by_albums
     joins(:albums).group('photographers.id').order('count(albums.id) DESC').to_a
   end
+
+  def self.select_top
+    num = all_by_albums.first.albums.count
+    joins(:albums).group('photographers.id').having("count(albums.id) == #{num}").to_a
+  end
 end

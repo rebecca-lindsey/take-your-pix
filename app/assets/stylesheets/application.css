@@ -41,6 +41,7 @@ html {
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
 }
 
 .album-box {
@@ -127,20 +128,31 @@ nav {
 
 nav a,
 .button {
-  min-width: 100px;
-  background-color: #dcc0dd;
   padding: 10px;
   box-shadow: 5px 5px 5px #1a191a;
 }
 
-nav a:hover,
-.button:hover {
+nav a {
+  background-color: #dcc0dd;
+  min-width: 100px;
+}
+
+.button {
+  background-color: #c6d0dc;
+  max-width: 150px;
+}
+
+nav a:hover {
   background-color: #d1afd4;
+}
+
+.button:hover {
+  background-color: #a6b5c9;
 }
 
 .link-buttons * {
   display: inline-block;
-  margin: 10px;
+  margin: 20px;
 }
 
 nav > a + a {

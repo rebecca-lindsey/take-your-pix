@@ -50,7 +50,7 @@ class PhotographersController < ApplicationController
   def destroy
     @photographer = Photographer.find_by(id: params[:id])
     @photographer.destroy
-    session.delete :photographer_id
+    %i[user_id account_type].each { |k| session.delete(k) }
     redirect_to root_path
   end
 

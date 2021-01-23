@@ -12,7 +12,12 @@ class Album < ApplicationRecord
     "#{id}-#{title.parameterize}"
   end
 
-def self.all_by_photos
+  def self.all_by_photos
     joins(:photos).group('albums.id').order('count(photos.id) DESC').to_a
+  end
+
+  def self.select_top
+    num = all_by_photos.first.photos.count
+    joins(:photos).group('albums.id').having("count(photos.id) == #{num}").to_a
   end
 end
