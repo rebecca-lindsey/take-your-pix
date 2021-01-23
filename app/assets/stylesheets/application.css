@@ -50,6 +50,14 @@ html {
   justify-content: center;
 }
 
+.best-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+
 #container {
   width: 70%;
   margin: auto;
@@ -161,6 +169,18 @@ nav > a + a {
 .caption {
   text-align: center;
   padding-top: 0;
+}
+
+#best-header {
+  text-align: center;
+}
+
+.best-category {
+  padding-bottom: 0;
+}
+
+.images {
+  text-align: center;
 }
 
 .form-error,

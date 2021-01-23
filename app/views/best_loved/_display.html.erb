@@ -1,7 +1,0 @@
-Highest <%= dependent %> count per <%= model %>: <%= count %> </p>
-
-<ul>
-  <% array.each do |element| %>
-      <li><%= link_to(element.attributes.values[1], send("#{model.downcase}_path", element)) %></li>
-    <% end %>
-</ul>
