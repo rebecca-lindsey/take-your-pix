@@ -50,7 +50,7 @@ class ClientsController < ApplicationController
   def destroy
     @client = Client.find_by(id: params[:id])
     @client.destroy
-    session.delete :client_id
+    %i[user_id account_type].each { |k| session.delete(k) }
     redirect_to root_path
   end
 

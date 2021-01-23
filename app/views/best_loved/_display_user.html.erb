@@ -1,6 +1,8 @@
-  <% if user.albums.first.nil? || user.albums.first.photos.nil? %>
-    <p><%= link_to image_tag(("default.jpg"), class: "thumbnail-img"), send("#{model.downcase}_path", user) %>
-  <% else %>
-    <p><%= link_to image_tag(url_for(user.albums.first.photos.first.image), class: "thumbnail-img"), send("#{model.downcase}_path", user) %> </p>
-  <% end %>
-  <h3 class="caption"> <%= user.username %></h3>
+  <% array.each do |user| %>
+    <% if user.albums.first.nil? || user.albums.first.photos.nil? %>
+      <p><%= link_to image_tag(("default.jpg"), class: "thumbnail-img"), send("#{model.downcase}_path", user) %>
+    <% else %>
+      <p><%= link_to image_tag(url_for(user.albums.first.photos.first.image), class: "thumbnail-img"), send("#{model.downcase}_path", user) %> </p>
+    <% end %>
+    <h3 class="caption"> <%= user.username %></h3>
+  <%end%>

@@ -1,0 +1,8 @@
+  <% @top_albums.each do |album| %>
+    <% if album.photos.first.nil? %>
+      <p><%= link_to image_tag(("default.jpg"), class: "thumbnail-img"), album_path(album) %>
+    <% else %>
+      <p><%= link_to image_tag(url_for(album.photos.first.image), class: "thumbnail-img"), album_path(album) %> </p>
+    <% end %>
+    <h3 class="caption"> <%= album.title %></h3>
+  <%end%>

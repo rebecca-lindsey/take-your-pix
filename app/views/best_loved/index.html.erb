@@ -2,16 +2,15 @@
 
 <div class="best-box">
     <div class="images">
-        <h2 class="best-category">Highest Photo count per Album: <%= @top_album.photos.count %> </h2>
-        <p><%= link_to image_tag(url_for(@top_album.photos.first.image), class: "thumbnail-img"), album_path(@top_album) %></p>
-        <h3 class="caption"> <%= @top_album.title %></h3>
+        <h2 class="best-category">Highest Photo count per Album: <%= @top_albums.first.photos.count %> </h2>
+        <%=render partial: "display_album"%>
     </div>
     <div class="images">
-        <h2 class="best-category">Highest Album count per Photographer: <%= @top_photographer.albums.count %></h2>
-        <%= render partial: "display_user", locals: {model: "Photographer", user: @top_photographer} %>
+        <h2 class="best-category">Highest Album count per Photographer: <%= @top_photographers.first.albums.count %></h2>
+        <%= render partial: "display_user", locals: {model: "Photographer", array: @top_photographers} %>
     </div>
     <div class="images">
-        <h2 class="best-category">Highest Album count per Client: <%= @top_client.albums.count %></h2>
-        <%= render partial: "display_user", locals: {model: "Client", user: @top_client} %>
+        <h2 class="best-category">Highest Album count per Client: <%= @top_clients.first.albums.count %></h2>
+        <%= render partial: "display_user", locals: {model: "Client", array: @top_clients} %>
     </div>
 </div>
