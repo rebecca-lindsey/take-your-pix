@@ -1,3 +1,10 @@
-<h1>New Photographer!</h1>
-<%= render 'global/display_errors', object: @user %>
-<%= render 'form'%>
+<h1>New Photographer</h1>
+<div class="new-user">
+    <div class="signup-form">
+        <%= render 'global/display_errors', object: @user %>
+        <%= render 'form'%>
+    </div>
+    <div class="oauth-button">
+        <%= button_to 'Sign in or Create Account with Google', '/auth/google_oauth2' %>
+    </div>
+</div>
