@@ -117,15 +117,22 @@ nav {
   padding-bottom: 10px;
 }
 
-nav a {
+nav a,
+.button {
   min-width: 100px;
   background-color: #dcc0dd;
   padding: 10px;
   box-shadow: 5px 5px 5px #1a191a;
 }
 
-nav a:hover {
+nav a:hover,
+.button:hover {
   background-color: #d1afd4;
+}
+
+.link-buttons * {
+  display: inline-block;
+  margin: 10px;
 }
 
 nav > a + a {
@@ -194,6 +201,29 @@ label[for="user_client_account"] {
 
 #welcome-form {
   display: flex;
+}
+
+#start-parent {
+  text-align: center;
+  padding-top: 20px;
+}
+
+#start-form {
+  border: 5px double #efe7e7;
+  display: inline-block;
+  text-align: left;
+  min-width: 100px;
+  padding: 20px;
+}
+
+#start-form h2,
+#start-form h3,
+#start-form p {
+  padding-bottom: 10px;
+}
+
+#start-form h2 {
+  text-align: center;
 }
 
 ul {

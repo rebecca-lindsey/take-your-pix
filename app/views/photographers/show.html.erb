@@ -1,10 +1,8 @@
 <h1>Photographer: <%=@photographer.username%></h1>
 <h2>Location: <%=@photographer.location%></h2>
 <h2>Specialty: <%=@photographer.specialty%></h2>
-<% if current_photographer == @photographer %>
-<p><%= link_to "Edit Profile", edit_photographer_path(@photographer) %> | <%= link_to "Delete Profile", photographer_path, method: :delete %></p>
-<p><%= link_to "Add New Album", new_album_path %></p>
-<%end%>
+
+<%= render "links" %>
 
 <div class="display-box">
     <h2 class="center-text">Albums</h2>

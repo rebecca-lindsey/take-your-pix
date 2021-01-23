@@ -1,0 +1,7 @@
+<% if current_photographer == @photographer %>
+    <div class="link-buttons">
+        <%= link_to "Edit Profile", edit_photographer_path(@photographer), class: "button" %>
+        <%= link_to "Delete Profile", photographer_path, class: "button", method: :delete %>
+        <%= link_to "Add New Album", new_album_path, class: "button" %>
+    </div>
+<%end%>
