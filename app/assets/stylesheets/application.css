@@ -169,6 +169,8 @@ nav > a + a {
   object-fit: fill;
   height: 100%;
   width: 500px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .thumbnail-img {
