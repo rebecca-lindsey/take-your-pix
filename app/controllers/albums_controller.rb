@@ -37,7 +37,7 @@ class AlbumsController < ApplicationController
     @album = Album.find_by(id: params[:id])
     @album.update(album_params)
     if @album.valid?
-      redirect_to album_path(@album)
+      redirect_to album_path(@album), notice: 'Album successfully updated!'
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album = Album.find_by(id: params[:id])
     @album.destroy
-    redirect_to albums_path
+    redirect_to albums_path, notice: 'Album and all associated Photos were deleted!'
   end
 
   private
