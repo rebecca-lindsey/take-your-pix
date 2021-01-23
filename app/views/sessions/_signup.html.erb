@@ -1,5 +1,0 @@
-<% if session[:account_type] == "Photographer"%>
-    <%= link_to "Create new Photographer account", new_photographer_path %>
-<% elsif session[:account_type] == "Client" %>
-    <%= link_to "Create new Client account", new_client_path %>
-<%end%>

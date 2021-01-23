@@ -3,10 +3,6 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   layout :determine_layout
 
-  def routing_error
-    render file: Rails.public_path.join('404.html'), status: :not_found, layout: false
-  end
-
   private
 
   def determine_layout

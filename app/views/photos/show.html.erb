@@ -1,9 +1,10 @@
-<div id="photo-display"><h1><%= @photo.title %></h1>
-
-<img class="full-img" src="<%= (url_for(@photo.image)) %>">
-
-<p><%= @photo.description %></p>
-<p><%= clean_time(@photo.date) %></p>
-<%= link_to @album.title, album_path(@album)%>
-<%= render "links" %>
+<div class="display-box">
+    <div id="photo-display">
+        <h1><%= @photo.title %></h1></div>
+        <img class="full-img" src="<%= (url_for(@photo.image)) %>">
+        <p><%= @photo.description %></p>
+        <p><%= clean_time(@photo.date) %></p>
+        <%= link_to @album.title, album_path(@album)%>
+        <%= render "links" %>
+    </div>
 </div>

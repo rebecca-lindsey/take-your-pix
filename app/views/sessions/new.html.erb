@@ -1,6 +1,6 @@
 <h1><%= session[:account_type] %> Login Page</h1>
 
-
+<div class="new-user">
 <%= render "form" %>
-<%= render "signup" %>
-<p><%= button_to 'Sign in or Create Account with Google', '/auth/google_oauth2' %></p>
+<%= button_to 'Sign in or Create Account with Google', '/auth/google_oauth2' %>
+</div>
