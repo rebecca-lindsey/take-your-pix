@@ -32,6 +32,13 @@ class ClientsController < ApplicationController
 
   def update
     @user = Client.find_by(id: params[:id])
+
+    unless @user.email == client_params[:email] || Client.find_by(email: client_params[:email]).nil?
+      flash.now.notice = 'Invalid email'
+      render :edit
+      return
+    end
+
     @user.update(client_params)
     if @user.valid?
       redirect_to client_path(@user)
