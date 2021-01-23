@@ -235,6 +235,12 @@ label[for="user_client_account"] {
   display: flex;
 }
 
+.new-user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 #start-parent {
   text-align: center;
   padding-top: 20px;
