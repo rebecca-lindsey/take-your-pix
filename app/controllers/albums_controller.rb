@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
   skip_before_action :require_photographer_as_self, only: %i[index show destroy]
 
   def index
-    @albums = Album.all
+    @albums = Album.all_by_photos
   end
 
   def new

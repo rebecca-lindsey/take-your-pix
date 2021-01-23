@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
   before_action :require_client_as_self, only: %i[edit update destroy]
 
   def index
-    @clients = Client.all
+    @clients = Client.all_by_albums
   end
 
   def new
