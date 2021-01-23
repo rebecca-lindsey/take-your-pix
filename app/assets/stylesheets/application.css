@@ -143,7 +143,7 @@ nav > a + a {
 }
 
 .full-img {
-  object-fit: fill;
+  object-fit: contain;
   height: 100%;
   width: 500px;
   padding-top: 20px;
