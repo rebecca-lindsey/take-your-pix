@@ -13,11 +13,11 @@ class Album < ApplicationRecord
   end
 
   def self.all_by_photos
-    joins(:photos).group('albums.id').order('count(photos.id) DESC').to_a
+    joins(:photos).group('albums.id').order('count(photos.id) DESC')
   end
 
   def self.select_top
-    num = all_by_photos.first.photos.count
-    joins(:photos).group('albums.id').having("count(photos.id) == #{num}").to_a
+    num = all_by_photos.to_a.first.photos.count
+    joins(:photos).group('albums.id').having("count(photos.id) == #{num}")
   end
 end

@@ -24,11 +24,11 @@ class Client < ApplicationRecord
   end
 
   def self.all_by_albums
-    joins(:albums).group('clients.id').order('count(albums.id) DESC').to_a
+    joins(:albums).group('clients.id').order('count(albums.id) DESC')
   end
 
   def self.select_top
-    num = all_by_albums.first.albums.count
-    joins(:albums).group('clients.id').having("count(albums.id) == #{num}").to_a
+    num = all_by_albums.to_a.first.albums.count
+    joins(:albums).group('clients.id').having("count(albums.id) == #{num}")
   end
 end

@@ -3,7 +3,7 @@ class PhotographersController < ApplicationController
   before_action :require_photographer_as_self, only: %i[edit update destroy]
 
   def index
-    @photographers = Photographer.all_by_albums
+    @photographers = Photographer.all_by_albums.to_a
   end
 
   def new
