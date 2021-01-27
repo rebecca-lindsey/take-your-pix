@@ -9,6 +9,8 @@ class Client < ApplicationRecord
   validates :password_digest, presence: true
   validates :location, length: { maximum: 50 }
 
+  scope :all_by_albums, -> { joins(:albums).group('clients.id').order('count(albums.id) DESC') }
+
   before_save { email.downcase! }
 
   def to_param
@@ -23,12 +25,8 @@ class Client < ApplicationRecord
     end
   end
 
-  def self.all_by_albums
-    joins(:albums).group('clients.id').order('count(albums.id) DESC')
-  end
-
   def self.select_top
-    num = all_by_albums.to_a.first.albums.count
+    num = all_by_albums.first.albums.count
     joins(:albums).group('clients.id').having("count(albums.id) == #{num}")
   end
 end

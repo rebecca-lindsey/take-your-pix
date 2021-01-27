@@ -11,6 +11,8 @@ class Photographer < ApplicationRecord
 
   before_save { email.downcase! }
 
+  scope :all_by_albums, -> { joins(:albums).group('photographers.id').order('count(albums.id) DESC') }
+
   def to_param
     "#{id}-#{username.parameterize}"
   end
@@ -23,12 +25,8 @@ class Photographer < ApplicationRecord
     end
   end
 
-  def self.all_by_albums
-    joins(:albums).group('photographers.id').order('count(albums.id) DESC')
-  end
-
   def self.select_top
-    num = all_by_albums.to_a.first.albums.count
+    num = all_by_albums.first.albums.count
     joins(:albums).group('photographers.id').having("count(albums.id) == #{num}")
   end
 end
