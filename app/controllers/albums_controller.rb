@@ -23,7 +23,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find_by(id: params[:id])
-    @photos = @album.photos
+    @photos = @album.photos.by_title(params[:search])
     @client = @album.client
     @photographer = @album.photographer
   end

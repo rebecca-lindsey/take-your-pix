@@ -7,6 +7,11 @@
 
 <%= render "links" %>
 
+<%= form_tag album_path(@album), method: :get do %>
+    <%= text_field_tag :search, params[:search]%>
+    <%= submit_tag "Find Photos" %>
+<% end %>
+
 <h2 class="center-text">Photos</h2>
 
 <%= render "photos" %>

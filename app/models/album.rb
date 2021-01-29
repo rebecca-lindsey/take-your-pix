@@ -10,6 +10,7 @@ class Album < ApplicationRecord
 
   scope :all_by_photos, -> { joins(:photos).group('albums.id').order('count(photos.id) DESC') }
 
+
   def to_param
     "#{id}-#{title.parameterize}"
   end
