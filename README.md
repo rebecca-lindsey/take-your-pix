@@ -74,3 +74,9 @@ Pull Requests are welcome on [GitHub](https://github.com/rebeccahickson/take-you
 <a href="https://youtu.be/LMuZaFGFvaw
 " target="_blank"><img src="http://img.youtube.com/vi/LMuZaFGFvaw/0.jpg" 
 alt="Screenshot of project walkthrough" width="240" height="180" border="10" /></a>
+
+## Further Reading
+
+[Rails Image Uploading 101](https://levelup.gitconnected.com/rails-image-upload-101-f9bf245e389b)
+
+A straight-forward walkthrough of how to upload and use images in a Ruby on Rails application
